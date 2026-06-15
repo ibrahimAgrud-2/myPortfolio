@@ -1,7 +1,9 @@
-﻿@model Portfolio.Models.aboutMe
+﻿@model Portfolio.ViewModels.HomeViewModel
+
+<link rel="stylesheet" href="~/css/pageStyle.css" />
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Ibrahim Agrud | Portfolio";
 }
 
 <div>
@@ -9,13 +11,12 @@
 
     <section style="margin-top:100px;">
         <div class="container">
-            <!--class row ne işe yarıyor-->
             <div class="row">
                 <div class="col-md-8 mt-5">
 
-                    <span class="fs-1"> @Model.greeting <span class="name-box">@Model.firstName @Model.lastName</span></span>
-                    <p style=" align=left">
-                        @Model.description
+                    <span class="fs-1"> @Model.about.greeting <span class="name-box">@Model.about.firstName @Model.about.lastName</span></span>
+                    <p>
+                        @Model.about.description
                     </p>
                     <a class="btn btn-primary" href="#Contact">Let's Talk👋🏻</a>
                 </div>
@@ -24,6 +25,32 @@
             </div>
         </div>
     </section>
+
+
+       <section class="section" id="Education">
+        <div class="container">
+            <h2>Education</h2>
+            <hr>
+            <div class="row" >
+                @foreach(var edu in Model.education)
+                {
+                 <div class="col-md-6">
+                     <div class="card edu-card-black">
+                         <div>
+                             <p class="fs-3 mt-4">@edu.schoolTitle <span class="fs-5">(@edu.entranceYear.ToString("yyyy") - @edu.endYear.ToString("yyyy"))</span></p>
+                             <img src="@edu.imgPath" class="image rounded-circle" alt="School Logo">
+                         </div>
+                     </div>
+                 </div>
+                }
+
+            </div>
+        </div>
+    </section>
+
+    
+
+
 
 
 

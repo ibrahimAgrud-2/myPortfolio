@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Portfolio.Data;
 using Portfolio.Models;
+using Portfolio.ViewModels;
 using System.Diagnostics;
 
 namespace Portfolio.Controllers
@@ -21,12 +23,13 @@ namespace Portfolio.Controllers
         //veriyi çekip view'a göndereceðiz
         public IActionResult Index()
         {
+          
 
-            //veriyi çekiyoruz. dbContext kýsmýnda aboutme sýnýfýdan ilk veriyi çekiyorz.
-            var about = _context.aboutMe.FirstOrDefault();
+            HomeViewModel model= new HomeViewModel();
+            model.about = _context.aboutMe.FirstOrDefault();
+            model.education = _context.education.ToList();
 
-            //veriyi view'ya gönderiyoz.
-            return View(about);
+            return View(model);
         }
 
         public IActionResult Privacy()

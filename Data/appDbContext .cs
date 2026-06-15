@@ -15,7 +15,8 @@ namespace Portfolio.Data
         //about me sınıfnına bakarar DB'de bir tablo oluşacak.
         public DbSet<aboutMe> aboutMe { get; set; }
         //Bu Dbsetler tabloyu EF'e tanıtan kısımlardır.
-        public DbSet<clsEducation> education { get; set; }
+        public DbSet<education> education { get; set; }
+        public DbSet<project> project { get; set; }
 
 
 
@@ -41,14 +42,14 @@ namespace Portfolio.Data
             modelBuilder.Entity<aboutMe>().HasData(about);
 
 
-            clsEducation edu = new clsEducation();
+            education edu = new education();
             edu.Id = 1;
             edu.schoolTitle = "Selcuk";
             edu.schoolType = "college";
             edu.imgPath = "img";
             edu.endYear = Convert.ToDateTime("01-01-2027");
             edu.entranceYear = Convert.ToDateTime("01-01-2023");
-            modelBuilder.Entity<clsEducation>().HasData(edu);
+            modelBuilder.Entity<education>().HasData(edu);
 
 
 

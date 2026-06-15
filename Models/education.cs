@@ -1,6 +1,6 @@
 ﻿namespace Portfolio.Models
 {
-    public class clsEducation
+    public class education
     {
 
         //EF'nin property'leri görebilmesi için public olmalı

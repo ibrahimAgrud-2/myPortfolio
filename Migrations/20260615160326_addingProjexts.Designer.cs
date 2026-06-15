@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Portfolio.Data;
 
@@ -11,9 +12,11 @@ using Portfolio.Data;
 namespace Portfolio.Migrations
 {
     [DbContext(typeof(appDbContext))]
-    partial class appDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260615160326_addingProjexts")]
+    partial class addingProjexts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,6 +52,16 @@ namespace Portfolio.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("aboutMe");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            description = "I'm a university student, currently pursuing my degree in Computer Engineering. My coding journey started with C++, and I spent a long time building projects with it. From there, I expanded into C#, MS SQL, Python, and other technologies. Lately, I've been diving into web technologies, and I'm excited to start my career as a Full Stack Developer. But don't think my life is all about writing code. I love cycling  — I usually join group rides — and I really enjoy playing table tennis  and meeting new people. So don't hesitate to reach out. I'd love to connect with you!",
+                            firstName = "ibrahim",
+                            greeting = "Hi There!",
+                            lastName = "agrud"
+                        });
                 });
 
             modelBuilder.Entity("Portfolio.Models.education", b =>
@@ -80,6 +93,17 @@ namespace Portfolio.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("education");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            endYear = new DateTime(2027, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            entranceYear = new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            imgPath = "img",
+                            schoolTitle = "Selcuk",
+                            schoolType = "college"
+                        });
                 });
 
             modelBuilder.Entity("Portfolio.Models.project", b =>
@@ -94,15 +118,7 @@ namespace Portfolio.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("githubLink")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("projectTitle")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("technologiesUsed")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

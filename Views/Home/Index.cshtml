@@ -49,8 +49,26 @@
     </section>
 
     
-
-
+    <section class="section" id="Projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <hr>
+            @foreach(var project in Model.projects)
+            {
+                <div class="card project-card">
+                <div class="card-body"><span class="fs-2">@project.projectTitle <br></span>
+                    <p>
+                       <span class="fs-5" style="color: rgb(170, 67, 249);"> @project.technologiesUsed <br></span>
+                        @project.description
+                    </p>
+                    <a class="btn btn-primary ms-1"
+                        href="@project.githubLink" target="_blank">Github</a>
+                </div>
+            </div>
+            }
+        </div>
+    </section>
+    
 
 
 

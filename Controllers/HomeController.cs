@@ -28,6 +28,7 @@ namespace Portfolio.Controllers
             HomeViewModel model= new HomeViewModel();
             model.about = _context.aboutMe.FirstOrDefault();
             model.education = _context.education.ToList();
+            model.projects = _context.project.ToList(); 
 
             return View(model);
         }

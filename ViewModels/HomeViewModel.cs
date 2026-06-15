@@ -9,5 +9,7 @@ namespace Portfolio.ViewModels
         public List<education> education{set;get;}
         public aboutMe about { get; set; }
 
+        public List<project> projects { get; set; }
+
     }
 }

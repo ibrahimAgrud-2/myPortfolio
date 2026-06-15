@@ -15,6 +15,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<appDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
+
 var app = builder.Build();
 //üst kýsým uygulam için gerekli olan servisleri kuruyoruz.
 //__________________________________________________________________

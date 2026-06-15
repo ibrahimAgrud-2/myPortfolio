@@ -1,10 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Portfolio.Models;
 
+
 namespace Portfolio.Data
 {
 
     //DBContext ile DB ile bağlantı kurup DB'yi yönetebiliriz. Tıpkı ADO.NET'te olan sqlconnetion gibi. appDbContext Dbcontext sınıfını miras alarak DB'yi yönetebilir hale geliyor. 
+    //Köprü sınıfı
     public class appDbContext: DbContext
     {
 
@@ -12,18 +14,24 @@ namespace Portfolio.Data
 
         //about me sınıfnına bakarar DB'de bir tablo oluşacak.
         public DbSet<aboutMe> aboutMe { get; set; }
+        //Bu Dbsetler tabloyu EF'e tanıtan kısımlardır.
+        public DbSet<clsEducation> education { get; set; }
 
-       public  appDbContext(DbContextOptions<appDbContext> options):base(options)
+
+
+        public appDbContext(DbContextOptions<appDbContext> options):base(options)
         { 
 
 
         }
 
+        //neden
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             aboutMe about = new aboutMe();
+          
             about.ID = 1;
             about.firstName = "ibrahim";
             about.lastName = "agrud";
@@ -32,6 +40,21 @@ namespace Portfolio.Data
 
             modelBuilder.Entity<aboutMe>().HasData(about);
 
+
+            clsEducation edu = new clsEducation();
+            edu.Id = 1;
+            edu.schoolTitle = "Selcuk";
+            edu.schoolType = "college";
+            edu.imgPath = "img";
+            edu.endYear = Convert.ToDateTime("01-01-2027");
+            edu.entranceYear = Convert.ToDateTime("01-01-2023");
+            modelBuilder.Entity<clsEducation>().HasData(edu);
+
+
+
         }
     }
+
+
+
 }

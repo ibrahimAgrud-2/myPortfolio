@@ -1,9 +1,25 @@
+
+using Microsoft.EntityFrameworkCore;
+using Portfolio.Data;
+
+
+//Uygulama kurulumu buradan baþlar.
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
+
+// controller ve view baðlantýsýný saðlamak.
 builder.Services.AddControllersWithViews();
 
+//DB eriþimi uygulama tanýtmak
+builder.Services.AddDbContext<appDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
 var app = builder.Build();
+//üst kýsým uygulam için gerekli olan servisleri kuruyoruz.
+//__________________________________________________________________
+
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

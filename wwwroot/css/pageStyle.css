@@ -1,0 +1,66 @@
+/*------------------Nav-hero---------------------------*/
+
+.navbar-text
+{
+    gap: 50px;
+}
+
+.name-box
+{
+ color: rgb(170, 67, 249);
+font-family: "__Kanit_f23807", "__Kanit_Fallback_f23807";
+
+}
+
+.contact-icon
+{
+    padding-right: 150px;
+}
+/*-------------------------------------------------*/
+
+
+
+/*---------------------edu-----------------------------*/
+.edu-card-black
+{
+   background-color: black;
+  
+}
+
+
+.image
+{
+    width: 250px;
+    margin-top: 50px;
+    margin-left: 90px;
+}
+
+/*-------------------------------------------------*/
+
+/*-----------------Skills--------------------------*/
+.skill-icon-card
+{
+    line-height: 4;
+}
+.skill-card
+{
+gap: 70px;
+}
+
+
+/*-------------------------------------------------*/
+
+
+
+.section
+{
+    margin-top: 200px;
+}
+
+.project-card
+{
+     margin-bottom: 50px;
+     height: fit-content;
+     background-color: black;
+}
+

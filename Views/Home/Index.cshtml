@@ -1,8 +1,30 @@
-﻿@{
+﻿@model Portfolio.Models.aboutMe
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
+<div>
     
-    <h1>Coding my portfolio with ASP.NET</h1>
+
+    <section style="margin-top:100px;">
+        <div class="container">
+            <!--class row ne işe yarıyor-->
+            <div class="row">
+                <div class="col-md-8 mt-5">
+
+                    <span class="fs-1"> @Model.greeting <span class="name-box">@Model.firstName @Model.lastName</span></span>
+                    <p style=" align=left">
+                        @Model.description
+                    </p>
+                    <a class="btn btn-primary" href="#Contact">Let's Talk👋🏻</a>
+                </div>
+                <div class="col-md-4"><img class="rounded-circle image ms-5" src="Images/me.jpg" alt="profil Photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
 </div>

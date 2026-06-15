@@ -1,21 +1,32 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Portfolio.Data;
 using Portfolio.Models;
+using System.Diagnostics;
 
 namespace Portfolio.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly appDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, appDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
+      
 
+
+        //veriyi çekip view'a göndereceðiz
         public IActionResult Index()
         {
-            return View();
+
+            //veriyi çekiyoruz. dbContext kýsmýnda aboutme sýnýfýdan ilk veriyi çekiyorz.
+            var about = _context.aboutMe.FirstOrDefault();
+
+            //veriyi view'ya gönderiyoz.
+            return View(about);
         }
 
         public IActionResult Privacy()

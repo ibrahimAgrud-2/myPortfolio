@@ -5,9 +5,10 @@
 namespace Portfolio.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class ilkMigration : Migration
     {
         /// <inheritdoc />
+        /// Tabloyu oluşturan kod.
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -17,7 +18,7 @@ namespace Portfolio.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     greeting = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    fistName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    firstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     lastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     description = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -27,7 +28,9 @@ namespace Portfolio.Migrations
                 });
         }
 
+        //
         /// <inheritdoc />
+        /// Tabloda yaplan değişiklikleri geri almak ve tabloyu silmek için kullanılan fonksiyon.
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

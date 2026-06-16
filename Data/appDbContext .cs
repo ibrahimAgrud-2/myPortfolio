@@ -17,6 +17,7 @@ namespace Portfolio.Data
         //Bu Dbsetler tabloyu EF'e tanıtan kısımlardır.
         public DbSet<education> education { get; set; }
         public DbSet<project> project { get; set; }
+        public DbSet<skills> skill { get; set; }
 
 
 

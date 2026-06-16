@@ -1,9 +1,11 @@
 ﻿@model Portfolio.ViewModels.HomeViewModel
 
 <link rel="stylesheet" href="~/css/pageStyle.css" />
+    <link rel="icon" href="icon/AGRUD.ico" type="icon/fav.ico">
+
 
 @{
-    ViewData["Title"] = "Ibrahim Agrud | Portfolio";
+    ViewData["Title"] = "Ibrahim Agrud";
 }
 
 <div>
@@ -67,9 +69,30 @@
             </div>
             }
         </div>
-    </section>
-    
 
+        </section>
+
+
+    <section class="section" id="Skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <hr>
+
+            <div class="fs-2 ms-4 col-md-12">
+                <div class="d-flex flex-wrap"  style="gap: 110px;">
+
+                      @foreach(var skill in Model.skill)
+                {
+                    <div>
+                         <img src="@skill.imgPath" alt="@skill.skillTitle logo" width="60"><span class="ms-3">@skill.skillTitle</span>
+                    </div>
+                }
+
+
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 </div>

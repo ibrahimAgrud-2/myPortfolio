@@ -6,7 +6,7 @@ using Portfolio.Data;
 //Uygulama kurulumu buradan baþlar.
 var builder = WebApplication.CreateBuilder(args);
 
-
+builder.Services.AddHttpClient();
 
 // controller ve view baðlantýsýný saðlamak.
 builder.Services.AddControllersWithViews();

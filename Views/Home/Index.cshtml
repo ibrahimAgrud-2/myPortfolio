@@ -9,9 +9,9 @@
 }
 
 <div>
+
     
-      
-    <section style="margin-top:100px;">
+       <section style="margin-top:100px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mt-5">
@@ -41,7 +41,7 @@
                          <div>
                              <p class="fs-3 mt-4">@edu.schoolTitle <span class="fs-5">(@edu.entranceYear.ToString("yyyy") - @edu.endYear.ToString("yyyy"))</span></p>
                              <img src="@edu.imgPath" class="image rounded-circle" alt="School Logo">
-                         </div>
+                         </div> 
                      </div>
                  </div>
                 }
@@ -50,7 +50,6 @@
         </div>
     </section>
 
-    
     <section class="section" id="Projects">
         <div class="container">
             <h2>Projects</h2>
@@ -69,7 +68,6 @@
             </div>
             }
         </div>
-
         </section>
 
 
@@ -77,18 +75,15 @@
         <div class="container">
             <h2>Skills</h2>
             <hr>
-
             <div class="fs-2 ms-4 col-md-12">
                 <div class="d-flex flex-wrap"  style="gap: 110px;">
 
-                      @foreach(var skill in Model.skill)
+                 @foreach(var skill in Model.skill)
                 {
                     <div>
                          <img src="@skill.imgPath" alt="@skill.skillTitle logo" width="60"><span class="ms-3">@skill.skillTitle</span>
                     </div>
                 }
-
-
                 </div>
             </div>
         </div>

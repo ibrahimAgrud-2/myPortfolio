@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio", "Portfolio.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortfolioAPI", "..\PortfolioAPI\PortfolioAPI.csproj", "{656E7572-4281-4424-B60F-E1B7D01B554C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortfolioData", "..\PortfolioData\PortfolioData.csproj", "{FE88F426-21D2-4FF2-A642-FCE0B5BB324E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{656E7572-4281-4424-B60F-E1B7D01B554C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{656E7572-4281-4424-B60F-E1B7D01B554C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{656E7572-4281-4424-B60F-E1B7D01B554C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE88F426-21D2-4FF2-A642-FCE0B5BB324E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE88F426-21D2-4FF2-A642-FCE0B5BB324E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE88F426-21D2-4FF2-A642-FCE0B5BB324E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE88F426-21D2-4FF2-A642-FCE0B5BB324E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

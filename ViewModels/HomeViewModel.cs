@@ -1,4 +1,5 @@
 ﻿using Portfolio.Models;
+using PortfolioShared.Models;
 
 namespace Portfolio.ViewModels
 {
@@ -6,11 +7,11 @@ namespace Portfolio.ViewModels
     //Tüm tablolardan verileri aynı anda view'ya göndermek için bu kapsayıcı sınıftır.
     public class HomeViewModel
     {
-        public List<education> education{set;get;}
-        public aboutMe about { get; set; }
+        public List<Education> education{set;get;}
+        public AboutMe about { get; set; }
 
-        public List<project> projects { get; set; }
+        public List<Project> projects { get; set; }
 
-        public List<skills> skill { get; set; }
+        public List<Skills> skill { get; set; }
     }
 }

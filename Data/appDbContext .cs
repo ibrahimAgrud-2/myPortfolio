@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Portfolio.Models;
+using PortfolioShared.Models;
 
 
 namespace Portfolio.Data
@@ -13,11 +14,11 @@ namespace Portfolio.Data
         //bu class sadece about me sınıfını  bağlı olacak about me tablosunu yöneteceğini DbSet<aboutMe> ile sölyemiş oluyoruz. EF buna göre tablo oluşturacak. 
 
         //about me sınıfnına bakarar DB'de bir tablo oluşacak.
-        public DbSet<aboutMe> aboutMe { get; set; }
+        public DbSet<AboutMe> aboutMe { get; set; }
         //Bu Dbsetler tabloyu EF'e tanıtan kısımlardır.
-        public DbSet<education> education { get; set; }
-        public DbSet<project> project { get; set; }
-        public DbSet<skills> skill { get; set; }
+        public DbSet<Education> education { get; set; }
+        public DbSet<Project> project { get; set; }
+        public DbSet<Skills> skill { get; set; }
 
 
 

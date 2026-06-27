@@ -4,6 +4,7 @@ using Portfolio.Models;
 using Portfolio.ViewModels;
 using System.Diagnostics;
 using System.Net.Http.Json;
+using PortfolioShared.Models;
 namespace Portfolio.Controllers
 {
     public class HomeController : Controller
@@ -36,21 +37,21 @@ namespace Portfolio.Controllers
             // model.about = _context.aboutMe.FirstOrDefault();
 
             var client = _httpClientFactory.CreateClient();
-            model.about = await client.GetFromJsonAsync<aboutMe>($"{_apiBaseUrl}/api/aboutme/2");
+            model.about = await client.GetFromJsonAsync<AboutMe>($"{_apiBaseUrl}/api/aboutme/2");
 
 
 
 
             //model.projects = _context.project.ToList();
-            model.projects = await client.GetFromJsonAsync<List<project>>($"{_apiBaseUrl}/api/projects");
+            model.projects = await client.GetFromJsonAsync<List<Project>>($"{_apiBaseUrl}/api/projects");
 
             //  model.education = _context.education.ToList();
-            model.education = await client.GetFromJsonAsync<List<education>>($"{_apiBaseUrl}/api/education");
+            model.education = await client.GetFromJsonAsync<List<Education>>($"{_apiBaseUrl}/api/education");
 
 
 
             //model.skill = _context.skill.ToList();
-           model.skill = await client.GetFromJsonAsync<List<skills>>($"{_apiBaseUrl}/api/skills");
+           model.skill = await client.GetFromJsonAsync<List<Skills>>($"{_apiBaseUrl}/api/skills");
 
             return View(model);
         }

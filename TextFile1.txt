@@ -8,5 +8,5 @@ Hem web  k?sm?nda hem de API k?sm?nda model yazarsan birini de?i?tirdi?inde heps
 
 
 
-* Panel eklemen laz?m. Bunu için summer ve jka gibi editörler var bu editörleir kullan.
+
 * Foto?raf eklemeyi dene. Foto ya web'te ya da DB'de tututlur. Bu ikisini de dene.

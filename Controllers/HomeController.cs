@@ -1,16 +1,16 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Portfolio.Data;
 using Portfolio.Models;
 using Portfolio.ViewModels;
 using System.Diagnostics;
-using System.Net.Http.Json;
 using PortfolioShared.Models;
 namespace Portfolio.Controllers
 {
+
+    //Tek sayfalık. Kısımların verilerini topla 
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly appDbContext _context;
           private readonly IHttpClientFactory _httpClientFactory;
         private readonly string _apiBaseUrl;
         private object configuration;
@@ -18,7 +18,6 @@ namespace Portfolio.Controllers
         public HomeController(ILogger<HomeController> logger, appDbContext context, IHttpClientFactory httpClientFactory, IConfiguration configuration)
         {
             _logger = logger;
-            _context = context;
             _httpClientFactory = httpClientFactory;
             _apiBaseUrl = configuration["ApiBaseUrl"];
        
@@ -26,19 +25,21 @@ namespace Portfolio.Controllers
       
 
 
-        //veriyi �ekip view'a g�nderece�iz
+        //veriyi çekip view'a göndereceðiz
         public async Task<IActionResult> IndexAsync()
         {
           
 
             HomeViewModel model= new HomeViewModel();
 
+
+            //
             ViewBag.ApiBaseUrl = _apiBaseUrl;
 
             // model.about = _context.aboutMe.FirstOrDefault();
 
             var client = _httpClientFactory.CreateClient();
-            model.about = await client.GetFromJsonAsync<AboutMe>($"{_apiBaseUrl}/api/aboutme/2");
+            model.about = await client.GetFromJsonAsync<AboutMe>($"{_apiBaseUrl}/api/aboutme/single");
 
 
 

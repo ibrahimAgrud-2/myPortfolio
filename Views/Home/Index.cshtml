@@ -17,9 +17,7 @@
                 <div class="col-md-8 mt-5">
 
                     <span class="fs-1"> @Model.about.greeting <span class="name-box">@Model.about.firstName @Model.about.lastName</span></span>
-                    <p>
-                        @Model.about.description
-                    </p>
+                   <p>@Html.Raw(Model.about.description)</p>
                     <a class="btn btn-primary" href="#Contact">Let's Talk👋🏻</a>
                 </div>
                 
@@ -30,11 +28,6 @@
     
                   <img  class="rounded-circle image ms-5" src="@(ViewBag.ApiBaseUrl + Model.about.imagePath)" />
 }
-                    
-               
-                
-                 
-                
                 </div>
             </div>
         </div>
@@ -94,7 +87,8 @@
                 {
                     <div>
                          <img src="@skill.imgPath" alt="@skill.skillTitle logo" width="60"><span class="ms-3">@skill.skillTitle</span>
-                    </div>
+
+                     </div>
                 }
                 </div>
             </div>

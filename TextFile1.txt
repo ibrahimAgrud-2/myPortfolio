@@ -4,6 +4,9 @@
 
 25 haziran perşembe - selman abi
 
-* Hem web  k?sm?nda hem de API k?sm?nda model yazarsan birini de?i?tirdi?inde hepsini de?i?tirmek zorunda kal?rs?n. Hem web'in hem de API'in kullanabilece?i modeller yap.
+Hem web  k?sm?nda hem de API k?sm?nda model yazarsan birini de?i?tirdi?inde hepsini de?i?tirmek zorunda kal?rs?n. Hem web'in hem de API'in kullanabilece?i modeller yap.
+
+
+
 * Panel eklemen laz?m. Bunu için summer ve jka gibi editörler var bu editörleir kullan.
 * Foto?raf eklemeyi dene. Foto ya web'te ya da DB'de tututlur. Bu ikisini de dene.

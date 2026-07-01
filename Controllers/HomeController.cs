@@ -21,6 +21,7 @@ namespace Portfolio.Controllers
             _context = context;
             _httpClientFactory = httpClientFactory;
             _apiBaseUrl = configuration["ApiBaseUrl"];
+       
         }
       
 
@@ -32,7 +33,7 @@ namespace Portfolio.Controllers
 
             HomeViewModel model= new HomeViewModel();
 
-
+            ViewBag.ApiBaseUrl = _apiBaseUrl;
 
             // model.about = _context.aboutMe.FirstOrDefault();
 

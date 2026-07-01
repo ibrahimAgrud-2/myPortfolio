@@ -22,7 +22,19 @@
                     </p>
                     <a class="btn btn-primary" href="#Contact">Let's Talk👋🏻</a>
                 </div>
-                <div class="col-md-4"><img class="rounded-circle image ms-5" src="Images/me.jpg" alt="profil Photo">
+                
+                <div class="col-md-4">
+                    
+                    @if (!string.IsNullOrEmpty(Model.about.imagePath))
+{
+    
+                  <img  class="rounded-circle image ms-5" src="@(ViewBag.ApiBaseUrl + Model.about.imagePath)" />
+}
+                    
+               
+                
+                 
+                
                 </div>
             </div>
         </div>
